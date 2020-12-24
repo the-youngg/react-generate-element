@@ -1,0 +1,42 @@
+@import '~antd/dist/antd.less';
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+}
+
+
+:global{
+  .ant-radio-group{ // 日、周、月模式切换
+    .ant-radio-button-wrapper{ // 每一项的宽、高、文字居中方式
+      width: 75px;
+      height: 42px;
+      line-height: 42px;
+      text-align: center;
+    }
+    .ant-radio-button-wrapper-checked{  // 选中项的 文字颜色、边线颜色
+      color: #843FFF;
+      border-color: #843FFF !important;
+    }
+    .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled){
+      // 第二项以及第三项的左侧线条的颜色  如不明白，看下 图一
+      box-shadow:-1px 0 0 0 #843FFF
+    }
+    .ant-radio-button-wrapper:hover{ // 鼠标经过每一项的 字体的颜色设置
+      color: #3B4042!important;
+    }
+    .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):focus-within{
+      // 鼠标选中某项时，去掉默认的外发光
+      outline: none;
+    }
+    label:first-child{ // 单独设置第一项的圆角效果
+      border-radius:9px 0px 0px 9px;
+    }
+    label:last-child { // 单独设置最后一项的圆角效果
+      border-radius:0px 9px 9px 0px;
+    }
+  }
+}
