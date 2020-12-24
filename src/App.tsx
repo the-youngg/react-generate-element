@@ -22,7 +22,6 @@ function App() {
         {label: '第三个', value: '4',},
     ]
 
-
     const attributes: InputAttribute[] = [
         {label: "兴趣", fileName: "d", type: "checkbox", dataSource: data},
         {label: "姓名", placeholder: "请输入姓名", fileName: "a", type: "string"},

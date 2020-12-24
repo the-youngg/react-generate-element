@@ -25,7 +25,7 @@ declare export interface InputAttribute {
      * 点击查询查询按钮后获得的对象，其中的key值就是该值
      * ⚠️注意：在同一组InputAttribute中，该属性不能重复
      */
-    fileName: string
+    fileName?: string
     /**
      * 输入提示
      */

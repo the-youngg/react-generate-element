@@ -4,8 +4,7 @@ import SearchBase from "./SearchBase";
 import {InputAttribute} from "./search";
 
 const SearchString: React.FC<InputAttribute> = (props) => {
-    const {placeholder, fileName, label,} = props;
-    console.log()
+    const {placeholder} = props;
     const element = (
         <Input
             placeholder={placeholder}
@@ -14,7 +13,7 @@ const SearchString: React.FC<InputAttribute> = (props) => {
         />
     );
     return (
-        <SearchBase label={label} element={element} fileName={fileName}/>
+        <SearchBase element={element}/>
     )
 }
 

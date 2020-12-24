@@ -1,14 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
 import {Col, Form} from "antd";
-import {InputAttribute} from "./search";
+import {ContextFile} from "./SearchInput";
 
-interface BaseProps extends InputAttribute {
+interface BaseProps {
     element: React.ReactNode
     gridData?: number[]
 }
 
 const SearchBase: React.FC<BaseProps> = (props) => {
-    const {label, fileName, element, gridData,} = props;
+    const {element, gridData,} = props;
+    const file = useContext(ContextFile);
     return (
         <Col
             xs={{span: gridData ? gridData[0] : 24}}
@@ -17,7 +18,7 @@ const SearchBase: React.FC<BaseProps> = (props) => {
             xxl={{span: gridData ? gridData[3] : 6}}
             className={'search-input-col'}
         >
-            <Form.Item label={label} name={fileName}>
+            <Form.Item label={file.label} name={file.fileName}>
                 {element}
             </Form.Item>
         </Col>

@@ -4,7 +4,13 @@ import {InputAttribute} from "./search";
 import SearchInput from "./SearchInput";
 
 interface GroupProps {
+    /**
+     * 检索条件们的属性
+     */
     attributes: InputAttribute[]
+    /**
+     * 获取所有检索条件的值
+     */
     getData: (data: any) => void
 }
 
@@ -23,7 +29,6 @@ const SearchGroup: React.FC<GroupProps> = (props) => {
         searchForm.resetFields();
     }
 
-    console.log("渲染SearchGroup")
     return (
         <React.Fragment>
             <Form form={searchForm}>

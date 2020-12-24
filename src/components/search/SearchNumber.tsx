@@ -4,12 +4,12 @@ import SearchBase from "./SearchBase";
 import {InputAttribute} from "./search";
 
 const SearchNumber: React.FC<InputAttribute> = (props) => {
-    const {placeholder, fileName, label} = props;
+    const {placeholder} = props;
     const element = (
         <InputNumber style={{width: '100%'}} placeholder={placeholder} maxLength={255}/>
     );
     return (
-        <SearchBase label={label} element={element} fileName={fileName}/>
+        <SearchBase element={element}/>
     )
 }
 export default SearchNumber;

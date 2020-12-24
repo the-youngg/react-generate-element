@@ -4,7 +4,7 @@ import SearchBase from "./SearchBase";
 import {InputAttribute} from "./search";
 
 const SearchCheckBox: React.FC<InputAttribute> = (props) => {
-    const {fileName, label, dataSource} = props;
+    const {dataSource} = props;
     const element = (
         <Checkbox.Group>
             {
@@ -21,7 +21,7 @@ const SearchCheckBox: React.FC<InputAttribute> = (props) => {
         </Checkbox.Group>
     )
     return (
-        <SearchBase label={label} element={element} fileName={fileName} gridData={[24]}/>
+        <SearchBase element={element} gridData={[24]}/>
     )
 }
 export default SearchCheckBox;

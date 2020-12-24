@@ -4,7 +4,7 @@ import SearchBase from "./SearchBase";
 import {InputAttribute} from "./search";
 
 const SearchRadio: React.FC<InputAttribute> = (props) => {
-    const {fileName, label, dataSource} = props;
+    const {dataSource} = props;
     const element = (
         <Radio.Group
             options={dataSource}
@@ -13,7 +13,7 @@ const SearchRadio: React.FC<InputAttribute> = (props) => {
         />
     );
     return (
-        <SearchBase label={label} element={element} fileName={fileName}/>
+        <SearchBase element={element}/>
     )
 }
 export default SearchRadio;
