@@ -1,6 +1,7 @@
 import React from "react";
-import SearchInput, {InputAttribute} from "./SearchInput";
 import {Button, Col, Form, Row} from "antd";
+import {InputAttribute} from "./search";
+import SearchInput from "./SearchInput";
 
 interface GroupProps {
     attributes: InputAttribute[]
@@ -36,6 +37,8 @@ const SearchGroup: React.FC<GroupProps> = (props) => {
                                 />
                         )
                     }
+                </Row>
+                <Row justify={"end"}>
                     <Col xs={{span: 24}} md={{span: 12}} xl={{span: 8}} xxl={{span: 6}}
                          className={'search-btn-col'}
                     >
