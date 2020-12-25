@@ -2,6 +2,7 @@ import React from "react";
 import {Button, Col, Form, Row} from "antd";
 import {InputAttribute} from "./search";
 import SearchInput from "./SearchInput";
+import _ from "lodash";
 
 interface GroupProps {
     /**
@@ -50,7 +51,14 @@ const SearchGroup: React.FC<GroupProps> = (props) => {
                         <Button type={"default"} onClick={onReset} style={{marginRight: 8}}>
                             重置
                         </Button>
-                        <Button type="primary" onClick={onSearch}>
+                        <Button type="primary"
+                                onClick={
+                                    _.debounce(
+                                        onSearch,
+                                        1000,
+                                        {leading: true, trailing: false}
+                                    )
+                                }>
                             查询
                         </Button>
                     </Col>

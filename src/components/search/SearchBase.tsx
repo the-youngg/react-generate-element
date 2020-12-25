@@ -18,7 +18,7 @@ const SearchBase: React.FC<BaseProps> = (props) => {
             xxl={{span: gridData ? gridData[3] : 6}}
             className={'search-input-col'}
         >
-            <Form.Item label={file.label} name={file.fileName}>
+            <Form.Item label={file.label} labelCol={{flex: '0 0 120px'}} name={file.fileName}>
                 {element}
             </Form.Item>
         </Col>
