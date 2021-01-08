@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.less';
-import SearchGroup from "./components/search/SearchGroup";
-import {InputAttribute} from "./components/search/search";
+import SearchGroup from "./components/unify/search/SearchGroup";
+import {RuleInputAttribute} from "./components/unify";
 
 function App() {
 
@@ -22,14 +22,22 @@ function App() {
         {label: '第三个', value: '4',},
     ]
 
-    const attributes: InputAttribute[] = [
-        {label: "兴趣", fileName: "d", type: "checkbox", dataSource: data},
-        {label: "姓名", placeholder: "请输入姓名", fileName: "a", type: "string"},
-        {label: "年龄", placeholder: "请输入年龄", fileName: "b", type: "number"},
-        {label: "性别", fileName: "c", type: "radio", dataSource: radioData},
-        {label: "城市", placeholder: "请选择城市", fileName: "e", type: "select", dataSource: data},
-        {label: "出生年", fileName: "f", type: "year"},
-        {label: "计划时间", fileName: "g", type: "startAndEndDateTime"},
+    const attributes: RuleInputAttribute<any>[] = [
+        {label: "兴趣", fieldName: "d", type: "checkbox", dataSource: data},
+        {label: "姓名", placeholder: "请输入姓名", fieldName: "a", type: "string"},
+        {label: "年龄", placeholder: "请输入年龄", fieldName: "b", type: "number"},
+        {label: "性别", fieldName: "c", type: "radio", dataSource: radioData},
+        {label: "城市", placeholder: "请选择城市", fieldName: "e", type: "select", dataSource: data},
+        {label: "出生年", fieldName: "f", type: "year"},
+        {label: "计划时间", fieldName: "g", type: "startAndEndDateTime"},
+        {
+            label: "头像",
+            placeholder: "请上传头像",
+            fieldName: "image",
+            type: "upload",
+            rules: [{required: true, message: "请上传头像"}],
+            uploadCount: 2
+        },
     ];
 
     const getData = (data: any) => {

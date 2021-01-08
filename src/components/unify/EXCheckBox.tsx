@@ -1,12 +1,12 @@
 import React from "react";
 import {Checkbox, Tag} from "antd";
-import SearchBase from "./SearchBase";
-import {InputAttribute} from "./search";
+import {InputAttribute} from "./index";
+import EXBase from "./EXBase";
 
-const SearchCheckBox: React.FC<InputAttribute> = (props) => {
-    const {dataSource} = props;
+const EXCheckBox: React.FC<InputAttribute<any> | any> = (props) => {
+    const {dataSource} = props as InputAttribute<any>;
     const element = (
-        <Checkbox.Group>
+        <Checkbox.Group {...props}>
             {
                 dataSource?.map((item, index) => {
                     return (
@@ -21,7 +21,7 @@ const SearchCheckBox: React.FC<InputAttribute> = (props) => {
         </Checkbox.Group>
     )
     return (
-        <SearchBase element={element} gridData={[24]}/>
+        <EXBase element={element} gridData={[24]}/>
     )
 }
-export default SearchCheckBox;
+export default EXCheckBox;
